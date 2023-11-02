@@ -5,6 +5,12 @@
     <title>학생정보관리</title>
 </head>
 <body>
+    <form th:action="@{/students/inquiry}" method="GET">
+        대학: <input type="text" name="univ">
+        이름: <input type="text" name="name">
+        학점: <input type="number" name="point" step="0.1">
+        <input type="submit" text="검색">
+    </form>
     <table>
         <tr><th>학생번호</th><th>학생이름</th><th>대학</th></tr>
         <tr th:each="student : ${students}">

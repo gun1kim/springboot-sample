@@ -20,4 +20,21 @@
         SET point = #{point}
         WHERE id =#{id}
     </update>
+    <select id="findByInquiryDto" parameterType="com.example.sample.domain.StudentInquiryDto"
+            resultType="com.example.sample.domain.Student">
+        SELECT * FROM student
+
+        <where>
+            <if test="univ != null and univ != '' ">
+                univ LIKE #{univ}
+            </if>
+
+            <if test="name != null and name != '' ">
+                AND name LIKE #{name}
+            </if>
+            <if test="point != null">
+                AND point >= #{point}
+            </if>
+        </where>
+    </select>
 </mapper>

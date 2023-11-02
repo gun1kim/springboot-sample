@@ -13,5 +13,6 @@
        이메일 <li th:text="*{email}"></li>
        성적 <li th:text="*{point}"></li>
     </ul>
+<a th:href="@{/students/delete/{id}(id=*{id})}">삭제</a>
 </body>
 </html>
